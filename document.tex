@@ -1,0 +1,231 @@
+\documentclass[10pt,twocolumn]{article}
+
+% use the oxycomps style file
+\usepackage{oxycomps}
+
+% usage: \fixme[comments describing issue]{text to be fixed}
+% define \fixme as not doing anything special
+\newcommand{\fixme}[2][]{#2}
+% overwrite it so it shows up as red
+\renewcommand{\fixme}[2][]{\textcolor{red}{#2}}
+% overwrite it again so related text shows as footnotes
+%\renewcommand{\fixme}[2][]{\textcolor{red}{#2\footnote{#1}}}
+
+% read references.bib for the bibtex data
+\bibliography{references}
+
+% include metadata in the generated pdf file
+\pdfinfo{
+    /Title (Ethical Implications in Solar-Powered Vehicle Energy Modeling)
+    /Author (Julia Chun)
+}
+
+% set the title and author information
+\title{Solar-Powered Vehicle Energy Modeling Project Proposal}
+\author{Julia Chun}
+\affiliation{Occidental College}
+\email{jchun2@oxy.edu}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Context}
+
+
+Climate change and global warming are global concerns where the implications are crucial and urgent. Changes to Earth's climate are driven by increased human emissions of greenhouse gases and these effects are seen having widespread effects on the environment. This concern is not a future problem as it was reported that effects that had long predicted would result from global climate change are now occurring, such as sea ice loss, accelerated sea level rise, and longer, more intense heat waves [NASA]. Furthermore, these environmental implications impact various sectors of society and are interrelated. For instance, factors such as drought and flooding not only could cause damages to ecosystems and infrastructure, but could also impact food production and human health. In addition, these implications would exacerbate socio-economic inequalities as affected areas with less resources will be more vulnerable. Human activity will ultimately determine the severity of the effects caused by climate change and with any further delay in global action to reduce the causes of climate change, a future of a habitable environment could be missed. 
+
+According to the United Nations, fossil fuels such as coal, oil, and gas are by far the largest contribute of global climate change, accounting for over 75 percent of greenhouse gas emissions and nearly 90 percent of all carbon dioxide emissions. The sector of transportation is seen to be a significant contributor to greenhouse gas emissions and transitioning to clean energy sources for vehicles is paramount. Solar-powered electric vehicles (EVs) present a promising solution for achieving this transition. This would offer the potential to drastically reduce reliance on fossil fuels and decrease carbon footprints associated with transportation. By harnessing solar energy to power vehicles, this project aims to address pressing environmental concerns while also promoting energy efficiency and renewable energy adoption in the transportation sector.
+
+In the pursuit of sustainable transportation solutions and the advancement of renewable energy adoption, predicting the energy needs for solar-powered vehicles emerges as a critical area of research. Predicting the energy needs of solar-powered vehicles poses challenges due to the dynamic nature of environmental factors and driving conditions. This project aims to create a model or models to predict the energy needs for a solar powered(EV) vehicle. 
+These models could then be used for optimized route planning and EV charging station location planning.
+
+
+ 
+
+ \section{Technical Background}
+ In this project, various software would be utilized such as WEKA and python. Furthermore, relevant mathematical and algorithmic concepts are explored.
+ 
+Regression Analysis:
+Regression analysis involves studying the relationship between variables. Specifically, we use it to understand how solar radiation levels (the amount of sunlight) relate to factors like weather conditions and time of day. This helps us predict how much energy a solar-powered vehicle can generate.
+
+Machine Learning Algorithms:
+Machine learning algorithms are tools that enable computers to learn patterns from data. In this project, algorithms such as random forests and linear regression will be used to analyze historical data and predict future solar radiation levels. These algorithms help make accurate predictions based on past patterns. Some machine learning algorithms that will be explored are Random Forest Regression, Stochastic Gradient Descent, and Multi-layer Perception Regression.
+Random Forest Regression (RFR):
+Random Forest Regression fits multiple decision trees to random subsets of the dataset. By averaging the results of these trees, it constructs the final estimator. The default number of estimators chosen is 100. RFR is selected for its ability to mitigate errors through the sheer number of trees, resulting in a robust and reliable model.
+
+Stochastic Gradient Descent (SGD):
+SGD utilizes gradient descent to perform linear regression on the data. The approach of selecting points stochastically during each iteration introduces randomness, thereby accelerating computation. This method is advantageous for large datasets and can effectively handle noisy data.
+
+Multi-layer Perceptron regression (MLP):
+MLP is an artificial neural network algorithm designed for regression tasks. It optimizes the squared error by employing a specified solver. In this context, MLP introduces a non-linear approach to modeling, allowing for better representation of non-linear relationships within the data. However, MLP's learning curve suggests that it may benefit from additional data, which will be further discussed in the concluding section.
+Data preprocessing refers to the steps taken to clean and prepare data for analysis.
+
+Feature Scaling: Numerical features may be scaled using techniques like min-max scaling or standardization to ensure uniformity and prevent certain features from dominating others during model training.
+Feature Engineering: New features may be derived from existing features to capture additional information relevant to solar radiation prediction. For instance, the solar zenith angle can be calculated based on geographical coordinates and\vspace{1em} % Adds 1em of vertical space between paragraphsdata. 
+timestamp 
+data.
+Cross-Validation Strategies: Cross-validation techniques such as k-fold cross-validation or stratified cross-validation are used to evaluate model performance across different parameter combinations and prevent\vspace{1em} % Adds 1em of vertical space between paragraphsoverfitting.
+Mean Squared Error (MSE):
+MSE measures the average squared difference between predicted and actual solar radiation levels.
+A lower MSE indicates better accuracy in predicting solar radiation \vspace{1em} % Adds 1em of vertical space between paragraphslevels.
+Root Mean Squared Error (RMSE):
+RMSE is the square root of MSE, providing a measure of the average magnitude of prediction errors in the same units as the target variable.
+Like MSE, lower RMSE values indicate better model \vspace{1em} % Adds 1em of vertical space between paragraphsperformance.
+
+R-squared value:
+The R-squared value represents the proportion of variance in the target variable (solar radiation) explained by the model.
+A higher R-squared value signifies a better model fit to the data.  Values closer to 1 indicate a stronger relationship between predicted and actual
+\vspace{em} % Adds 1em of vertical space between paragraphs
+values.
+
+Mean Absolute Error (MAE):
+MAE measures the average absolute difference between predicted and actual solar radiation levels.
+It provides a more interpretable metric of prediction accuracy, where lower MAE values indicate better performance.
+
+
+
+\section{Prior Work}
+
+There have been studies done in the past aimed at addressing similar challenges. These works could be references to contextualize this project within the broader landscape of solar energy.  
+One notable research paper which informs our project is the study conducted by Samuel Miller, titled "Predicting Solar Energy Potential with Machine Learning." Miller's research focused on engineering machine learning models capable of effectively predicting solar power potential based on a selection of pertinent variables. By leveraging weather and location data, the study demonstrated the efficacy of machine learning algorithms, particularly the Random Forest model, in accurately forecasting solar power potential. Furthermore,this study analyzed the power output from horizontal photovoltaic panels across 12 sites jin the Northern hemisphere over a span of 14 months. Additionally it utilized 17 diverse features, including weather conditions, humidity levels, and geographic coordinates, to predict power output (PolyPwr) in 15-minute intervals. Through rigorous data preprocessing and the application of data analytics models such as Random Forest, Stochastic Gradient Descent, and Multilayer Perceptron regression, the study underscored the importance of robust predictive modeling techniques in capturing the dynamic nature of solar energy generation.
+
+Another paper, yet to be further explored, which could discuss relevant challenges to this project is the paper "Optimal site selection and sizing of solar EV charge stations". The paper discusses the growing importance of electric vehicles (EVs) as an environmentally friendly alternative to conventional gasoline vehicles due to their reduced carbon emissions, cost-effectiveness, and quieter operation. However, one of the main challenges with EVs is the availability of charging stations. To address this issue, the paper proposes a Multi-Criteria Decision Analysis (MCDA) approach based on Geographic Information Systems (GIS) for the optimal site selection of EV charging stations.
+Other works that would be helpful to explore are those that involve route optimization, energy management systems for electric vehicles, and the integration of renewable energy sources into transportation networks. For instance, research on optimal route planning for electric vehicles considering factors such as traffic congestion, terrain, and energy consumption patterns could provide valuable insights into optimizing the efficiency of EVs. Additionally, studies on energy management systems which utilize predictive modeling techniques to optimize energy harvesting and utilization strategies within vehicles can inform the development of similar systems for solar-powered EVs.
+
+Furthermore, exploring literature on the integration of renewable energy sources, particularly solar energy, into transportation networks can provide valuable context for understanding the broader implications of this project. Studies that examine the feasibility and effectiveness of solar-powered transportation systems, as well as the challenges and opportunities associated with their implementation, can offer valuable insights into the potential impact of solar-powered EVs on sustainable transportation.
+
+
+
+
+\section{Methods}
+In this section, the approach for the project, covering the intended steps and processes is delineated.
+
+\subsection{Data Acquisition} 
+ This process would begin by gathering relevant data for this project. In this step, data relating to solar radiation and factors that would affect this target variable would be acquired and explored. Some factors that would be searched for and evaluated include weather conditions, environmental factors, time of day, seasonal variations for the destination point, traffic, terrain, and elevation, with the target variable being solar radiance or a variable that could be considered the equivalent of this.  One source that may have relevant data, but is yet to be deeper explored, the National Solar Radiation is Database(NSRDB), which is a serially complete collection of hourly and half-hourly values of meteorological data and the three most common measurements of solar radiation: global horizontal, direct normal and diffuse horizontal radiance. For a given location covered by this dataset, it would be possible to view the amount of solar energy at a given time. Hence, this dataset could also be used for evaluating the finished model. Other organizations/sources where data would be explored include NASA, Solcast, and OpenWeatherMap. It may be possible where one dataset does not include all the factors I believe would be necessary for my model. Hence, there may be a need to create an arbitrary set of data to include all the desired factors. Furthermore, separate sets of data may be used to create more than one model to contribute on creating the finsihed model. 
+ 
+\subsection{Data Preprocessing}
+Before initiating model training, the dataset/datasets would be meticulously prepared to ensure its suitability for analysis. This would involve tasks such as cleaning the data to remove errors and inconsistencies, handling missing values, and encoding categorical variables into a numerical format. By standardizing the data and addressing data quality issues, a clean and structured dataset would be ready for training.
+Handling Missing Values: Techniques such as mean imputation, median imputation, or interpolation are employed to handle missing values in the dataset.
+\subsection{Feature Selection and Engineering}
+Informative features that influence solar radiation levels would be identified and engineered in this step. 
+
+\subsection{Design of Experiment for Feature Selection}
+One potential approach in assessing which variables should be included in the model is utilization the approach of design of experiment. The primary objective of employing a Design of Experiment (DOE) methodology is to systematically explore the factors and their interactions that affect the energy needs of solar-powered EVs. By designing experiments to manipulate these factors, it is intended to identify the most critical variables and optimize our predictive model accordingly. One approach to the experimental design is a factorial design where factors could be systematically varied at multiple levels to access their individual and interactive effects on energy needs. 
+\subsection{Algorithm Selection}
+Once the data is prepared and features are engineered, the process of choosing the  most appropriate machine learning algorithm of the prediction task would be implemented. In this step, several algorithms for regression tasks such as the ones discussed in the technical background portion of the paper such as  Random Forest Regression, Stochastic Gradient Descent, and Multi-layer Perception Regression would be tested. A process similar to the methods the paper "Predicting Solar Energy Potential with Machine Learning" by Samuel Miller used when choosing the best algorithm will be implemented. For this process, once the models are used to generate predictions the results will be compared to the true values of the target variable.  This decision would further guided by factors such as the nature of the data, the complexity of the problem, computational considerations, and considerations about which result might represent relationships between the factors and target variable the best .
+
+\subsection{Model training} With the algorithm selected, the model would be trained using the prepared dataset. During training, the model would learn from the input data and adjust its parameters to minimize the difference between predicted and actual solar radiation levels. This process would involve iteratively updating the model's parameters using optimization algorithms such as gradient descent or its variants.
+
+\subsection{Hyperparameter Tuning}To optimize model performance, hyperparameters are explored through techniques like grid search or random search. This involves experimenting with different parameter combinations and evaluating their impact on model performance using cross-validation.
+\subsection{Creating a Static and Dynamic Model}
+For this project both a static and dynamic model could be created using the steps discussed. The static model would consider factors which remain constant and would use data that is static while the dynamic model would incorporate variables that vary during the solar powered EV's route from one destination to another. For the dynamic model two destination points would be determined for one route. The static model would be trained using conventional regression techniques, while the dynamic model may require time-series analysis or other methods to account for temporal dependencies. By integrating insights from both models, a comprehensive framework for predicting the energy needs of a solar-powered EV would be established, considering both static characteristics and dynamic environmental factors along the journey route. Furthermore, this combined approach would enable more accurate predictions and efficient energy management strategies for solar-powered vehicles. 
+\subsection{Optimal Charging Station Placement}
+The creation of these models could serve as valuable tools for optimizing the placement and distribution of EV charging stations, thereby contributing to the advancement of sustainable transportation infrastructure.
+\subsection{Data Integration} In this step, relevant data would be gathered for model inputs, including solar radiation data, traffic patterns, driving routes, energy consumption profiles of EVs, and geographical information system (GIS) data for mapping.
+\subsection{Static Model Application}
+The static model would be utilized to identify regions with high solar radiation levels and the feasibility of deploying solar-powered charging stations in those areas would be assessed.
+\subsection{Route Optimization}
+The dynamic model could be used for route optimization which would provide EV drivers with route recommendations that would minimize energy consumption, therefore, promoting energy-efficient and sustainable transportation.
+
+\subsection{Backtesting}
+Backtesting is a crucial aspect of evaluating the performance and accuracy of predictive models, particularly in the context of forecasting energy needs and optimizing routes for solar-powered vehicles. This process would include testing a model's predictions against historical data to assess how well it would have performed in the past. 
+\subsubsection{Historical Data Selection and Data Partitioning}For this project, historical data which spans a significant period, capturing variations in environmental factors, driving conditions, and energy consumption patterns would be selected. This data should be representative of the scenarios the model will encounter in real-world applications. The data would then be split into two distinct sets: a training set and a testing set. The training set would be used to train the predictive model, while the testing set would be used and reserved for evaluating its performance. The partitioning ensures that the model is not evaluated on data it has already seen during training, thereby providing a more accurate assessment of its generalization capability.
+
+\subsubsection{Prediction Generation} After training the model, the model would be used to generate predictions for the testing set and estimate the energy needs or recommending optimized routes for each historical data point. The model's predictions would be compared against the actual observed values from the testing set. The model's performance would be evaluated using appropriate evaluation metrics such as mean absolute error (MAE), root mean squared error (RMSE). 
+
+\subsubsection{Iterative Refinement}The results of the backtesting process to identify areas where the model may be underperforming or exhibiting biases would be analyzed. The model design would then be iterated on feature engineering techniques, or algorithm parameters to improve its predictive capabilities.
+
+\subsubsection{Scenario Analysis} A scenario analysis could be conducted by backtesting the model under various environmental and driving conditions, including extreme weather events, peak traffic periods, and seasonal fluctuations. This would help evaluate the model's ability to adapt to different scenarios and make accurate predictions across diverse conditions.
+
+
+
+\section{Evaluation Metrics}
+
+In the evaluation of the project, several metrics and methodologies would be employed to assess the performance and effectiveness of the predictive models for energy needs prediction and route optimization for solar-powered vehicles. These evaluation metrics aim to quantify the accuracy, reliability, and utility of the models in real-world scenarios. 
+\subsection{BackTesting}: Backtesting would allow comparison of the predictions generated by the predictive models against actual observed values from historical data. By quantifying the differences between predicted and actual values using metrics such as mean absolute error (MAE), root mean squared error (RMSE), and coefficient of determination (R-squared),  the performance of your models would be objectivley assessed. 
+
+
+
+
+
+\section{Timeline}
+\begin{itemize}
+    \item \textbf{8/25 - 9/8:} 
+    \begin{itemize}
+        \item Gather and review relevant literature on solar energy prediction and vehicle route optimization.
+        \item Identify potential data sources and begin collecting datasets for analysis.
+        \item Familiarize data preprocessing techniques and machine learning algorithms.
+    \end{itemize}
+    
+    \item \textbf{9/9 - 9/22:} 
+    \begin{itemize}
+        \item Conduct data preprocessing tasks, including cleaning, handling missing values, and encoding categorical variables.
+        \item Explore and visualize the acquired datasets to gain insights into the relationships between variables.
+        \item Begin experimenting with feature selection and engineering techniques to enhance model performance.
+    \end{itemize}
+    
+    \item \textbf{9/23 - 10/6:} 
+    \begin{itemize}
+        \item Dive deeper into algorithm selection and start training initial predictive models using selected algorithms.
+        \item Evaluate model performance using cross-validation and appropriate evaluation metrics.
+        \item Fine-tune hyperparameters and conduct iterative model refinement to improve predictive accuracy.
+    \end{itemize}
+    
+    \item \textbf{10/7 - 10/20:} 
+    \begin{itemize}
+        \item Implement and test the designed experiments for feature selection to identify the most influential factors.
+        \item Explore the application of dynamic models for route optimization and energy management strategies.
+        \item Assess the feasibility of incorporating static and dynamic models for optimal route planning.
+    \end{itemize}
+    
+    \item \textbf{10/21 - 11/3:} 
+    \begin{itemize}
+        \item Integrate dynamic model predictions into route planning algorithms and evaluate their effectiveness in optimizing energy gain.
+        \item Conduct backtesting to validate the accuracy and robustness of predictive models under various scenarios.
+        \item Gather feedback from stakeholders and potential end-users to refine model features and functionalities.
+    \end{itemize}
+    
+    \item \textbf{11/4 - 11/17:} 
+    \begin{itemize}
+        \item Finalize the implementation of predictive models and route optimization algorithms.
+        \item Conduct comprehensive testing to ensure the reliability and scalability of the developed solutions.
+        \item Prepare preliminary results and findings for the poster presentation.
+    \end{itemize}
+    
+    \item \textbf{11/18 - 12/1:} 
+    \begin{itemize}
+        \item Create and design the poster for the poster presentation.
+        \item Practice and refine the presentation to effectively communicate the project objectives, methods, and results.
+        \item Conduct a dry-run of the poster presentation and gather feedback for improvement.
+    \end{itemize}
+    
+    \item \textbf{12/2 - 12/15:} 
+    \begin{itemize}
+        \item Finalize the poster and prepare supplementary materials for the poster presentation.
+        \item Present the project poster and findings during the poster presentation session.
+        \item Incorporate feedback and suggestions from the presentation into the final paper and code submission.
+        \item Polish and submit the final paper and code by the deadline on 12/15.
+    \end{itemize}
+\end{itemize}
+
+
+This timeline provides a rough plan for progressing through the project milestones and ensures that all tasks are completed in a timely manner for the final submission.
+
+
+
+\newpage
+\begin{thebibliography}{100}
+
+\bibitemSamuelMiller413. (n.d.). SAMUELMILLER413/predicting-solar-energy: This repo features an experiment I conducted using machine learning models to predict solar energy potential by region given meteorological data and location data. Retrieved from https://github.com/SamuelMiller413/Predicting-Solar-Energy.git Anne. “The Complex Truth about Electric Vehicles: Are They Truly Eco-Friendly and Guilt-Free?: Bow Seat Ocean Awareness Programs.” Bow Seat Ocean Awareness Programs • Activating the next Wave of Ocean Leaders through the Arts, Science, and Advocacy., 28 Nov. 2023, bowseat.org/news/the-complex-truth-about-electric-vehicles-are-they-truly-eco-friendly-and-guilt-free/#:~:text=The%20production%20of%20EVs%2C%20especially,to%20deforestation%20and%20biodiversity%20loss. 
+
+\end{thebibliography}
+
+
+
+
+
+\printbibliography
+
+\end{document}
+
